@@ -1,21 +1,17 @@
 <?php
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
+if(isset($_POST["submit"])) {
+$recipient = "waldemar@juschin.com"; //my email
+echo $subject = 'Email Message From WJ Contact Form';
+echo $name = $_POST ["name"];
+echo $email = $_POST["email"];
+echo $subject = $_POST["subject"];
+echo  $message = $_POST["message"];
 
-    $from = 'From: Contact Form'; // Edit to suit your needs 
-    $to = 'waldemar@juschin.com'; // Edit to suit the email on which you wish to recieve the form details
-    $subject = 'Contact form submission'; 
+ $mailBody="Name: $name\nEmail: $email\n\n$message"; 
 
-    $body = "From: $name\n E-Mail: $email\n Subject: $subject\n Message:\n $message";
+ mail($recipient, $subject, $mailBody, "From: $name <$email>");
 
-    if ($_POST['submit']) {
-        if (mail ($to, $subject, $body, $from)) { 
-            echo '<p>Your message has been sent!</p>';
-        } else { 
-            echo '<p>Something went wrong, go back and try again!</p>'; 
-        }
-    }
+echo $thankYou="<p>Thank you! We will be in contact with you shortly.</p>";
 
+}
 ?>
