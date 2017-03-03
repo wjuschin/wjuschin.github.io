@@ -9,6 +9,7 @@ body {
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
@@ -35,6 +36,31 @@ a:hover {
     text-decoration: none;
     outline: none;
 }
+
+/***********************************
+************************************
+Portfolio Modal List
+************************************
+***********************************/
+
+
+.custom-bullet li {
+    display: block;
+    text-align: left;
+}
+
+.custom-bullet li:before
+{
+    /*Using a Bootstrap glyphicon as the bullet point*/
+    content: "\e080";
+    font-family: 'Glyphicons Halflings';
+    font-size: 9px;
+    float: left;
+    margin-top: 4px;
+    margin-left: -17px;
+    color: #CCCCCC;
+}
+
 /***********************************
 ************************************
 Responsive media queries
@@ -70,18 +96,22 @@ Responsive media queries
     color: #fffde0;
     background-color: transparent;
 }
+
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
     color: #fcb714;
     background-color: transparent;
 }
 
+.navbar-default .navbar-nav > li > a:hover {
+    color: #fcb714;
+}    
 .top-nav-collapse {
     padding: 0; 
     background: rgba(50,60,70, 0.9);
 }
 
 .bg-color{
-	background-color: RGBA(0, 0, 0, 0.5);
+	background-color: RGBA(0, 0, 0, 0.3);
 	min-height: 730px;
 }
 .navbar-border{
@@ -123,9 +153,10 @@ Responsive media queries
 	background: url('../img/about-banner.jpg') no-repeat;
 	background-size: cover;
 	margin-bottom: -3px;
+    padding-top: 80px;
 }
 .section-padding{
-	padding: 60px 0px;
+	padding: 100px 0px;
 }
 .title{
 	font-size: 24px;
@@ -197,7 +228,7 @@ blockquote {
 
 #contact .btn-primary {
     background: #fcb714;
-    border: 1px solid #fff;
+    
 }
 
 .validation {
@@ -554,10 +585,7 @@ Portfolio Modal
   font-style: italic;
   font-size: 16px;
 }
-.portfolio-modal .modal-content ul.list-inline {
-  margin-bottom: 30px;
-  margin-top: 0;
-}
+
 .portfolio-modal .modal-content img {
   margin-bottom: 30px;
 }
@@ -603,7 +631,13 @@ Portfolio Modal
 
 .btn-primary {
     background: #fcb714 !important;
-    border: 1px solid #000 !important;
+    border-color: #fcb714;
+}
+
+
+
+hr {
+    border-top: 1px solid #fcb714;
 }
 
 ::-moz-selection {
@@ -631,3 +665,4 @@ body {
 Contact form
 ************************************
 ***********************************/
+
